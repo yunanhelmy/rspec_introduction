@@ -99,3 +99,5 @@ RSpec.configure do |config|
 =end
   config.formatter = :documentation
 end
+
+require 'byebug'
