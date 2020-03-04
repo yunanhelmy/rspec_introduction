@@ -1,13 +1,12 @@
+require 'decrease_balance'
+
 class BuyFruit
   def self.call(wallet, price)
     options = {}
-    options[:wallet] = wallet
-    options[:status] = false
 
-    if options[:wallet].balance >= price
-      options[:wallet].balance -= price
-      options[:status] = true
-    end
+    transaction = DecreaseBalance.(wallet, price)
+    options[:status] = transaction[:status]
+    options[:wallet] = transaction[:wallet]
 
     options
   end
