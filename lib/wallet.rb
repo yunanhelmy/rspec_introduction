@@ -5,4 +5,8 @@ class Wallet
     @id = id
     @balance = balance
   end
+
+  def balance=(n)
+    @balance = n
+  end
 end
